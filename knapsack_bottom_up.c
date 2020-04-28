@@ -27,10 +27,10 @@ for (int i = 0; i < n + 1; i++) {
 			 * 	 subtract its weight from w
 			 * - when we don't use the item, we just process
 			 *   it*/
-			t[i][j] = max(val[i-1] + t[i-1][j] - weight[i-1],
+			t[i][j] = max(val[i-1] + t[i-1][j - weight[i-1]],
 					      t[i-1][j]);
 		} else {
-			/* we just process item, don't use it */
+			/* we just process item, can't use it */
 			t[i][j] = t[i-1][j];
 		}
 	}
