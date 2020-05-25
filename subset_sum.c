@@ -12,11 +12,15 @@ int n = sizeof(arr) / sizeof(int);
 int t[n+1][sum+1];
 
 /* what to return? T or F, so that's 
- * what we'll init the matrix with 
- * - t[0][0] will be true, empty set
- * - t[1][0] will be true as well. so on until t[n+1][0]
- * - t[0][1] won't be true. Sum can't be 1 when no item to be picked 
- * - t[0][2] won't be true as well. so on until t[0][sum+1]*/
+ * what we'll init the matrix with
+ * 
+ * - t[0][0] will be TRUE, empty set
+ * - t[1][0] will be TRUE as well. this means size of array is 1.
+ *   means we just have 1 in the array. So can we get to sum, given
+ *   just one element. Yes we can, we don't choose it. So its an
+ *   empty set {}. So on until t[n+1][0]
+ * - t[0][1] would be FALSE. Sum can't be 1 when no item to be picked 
+ * - t[0][2] would be FALSE as well. so on until t[0][sum+1]*/
 
 /* INIT */
 for (int i = 0; i < n + 1; i++) {
@@ -31,8 +35,8 @@ for (int i = 0; i < n + 1; i++) {
 }
 
 /* translation of choice diagram */
-for (int i = 0; i < n + 1; i++) {
-	for (int j = 0; j < sum + 1; j++) {
+for (int i = 1; i < n + 1; i++) {
+	for (int j = 1; j < sum + 1; j++) {
 		if (arr[i - 1] <= j) {
 			/* item can be picked. case for do we pick || do we not. 
 			 * when we do, we process and subtract its value from sum

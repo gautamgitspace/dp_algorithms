@@ -19,8 +19,8 @@ for (int i = 0; i < n + 1; i++) {
 	}
 }
 
-for (int i = 0; i < n + 1; i++) {
-	for (int j = 0; j < w + 1; j++) {
+for (int i = 1; i < n + 1; i++) {
+	for (int j = 1; j < w + 1; j++) {
 		if (weight[i-1] <= j) {
 			/* max of either we use that item or we not
 			 * - when we use the item, we add its value and
