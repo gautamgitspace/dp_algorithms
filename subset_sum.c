@@ -9,7 +9,7 @@
  * - We have a max target to meet */
 
 int n = sizeof(arr) / sizeof(int);
-int t[n+1][sum+1];
+bool t[n+1][sum+1];
 
 /* what to return? T or F, so that's 
  * what we'll init the matrix with
@@ -24,7 +24,7 @@ int t[n+1][sum+1];
 
 /* INIT */
 for (int i = 0; i < n + 1; i++) {
-	for (int j = 0; j < sum + 1; sum++) {
+	for (int j = 0; j < sum + 1; j++) {
 		if (i == 0) {
 			t[i][j] = false;
 		} 
