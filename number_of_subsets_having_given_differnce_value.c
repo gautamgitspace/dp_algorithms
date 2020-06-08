@@ -12,7 +12,7 @@
  *
  * now s1 can we calculated since we diff & sum(arr) can be calculated 
  *
- * This meanns we will have something like s1 = value 
+ * This means we will have something like s1 = value 
  * so we gotta find some subsets in arr that sum up to value! 
  * This has been reduced to count of subset sum problem */
 
