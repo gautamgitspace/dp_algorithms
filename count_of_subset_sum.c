@@ -14,7 +14,7 @@ for (int i = 0; i < n + 1; i++) {
 		if (i == 0) {
 			t[i][j] = 0;
 		}
-		else if (j == 0) {
+		if (j == 0) {
 			t[i][j] = 1;
 		}
 	}
