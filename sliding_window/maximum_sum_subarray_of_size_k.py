@@ -13,8 +13,7 @@ def max_sum_subarray_of_size_k(self, nums):
     left, right, sums = 0, 0, 0
 
     while right < len(nums):
-        # compute sum
-        sums += nums[right]
+        sums += nums[right]                 # compute sum
 
         if right - left + 1 < k:            # expand window
             right += 1
