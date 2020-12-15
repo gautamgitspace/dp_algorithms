@@ -16,7 +16,7 @@ def max_sub_array_len_sum_equals_k(self, nums, k):
     left, right, sums, max_size = 0, 0, 0, - float('inf')
 
     while right < len(nums):
-        sums += nums[right]                                 # calc sum
+        sums += nums[right]                                 # calc sum/process on right
         if sums < k:
             right += 1
         elif sums == k:                                     # sum condition hit
@@ -24,7 +24,7 @@ def max_sub_array_len_sum_equals_k(self, nums, k):
             right += 1
         elif sums > k:                                      # sum overflow
             while sums > k:
-                sums -= nums[left]                          # deduct from sum
+                sums -= nums[left]                          # deduct from sum/process on left
                 left += 1
             right += 1
     return max_size

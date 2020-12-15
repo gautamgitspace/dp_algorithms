@@ -31,7 +31,7 @@ def first_negative_in_every_window_optimized(nums, k):
     
     while right < len(nums):
         if nums[right] < 0:
-            temp.append(nums[right])            # store the negative number
+            temp.append(nums[right])            # store the negative number/process on right
         
         if right - left + 1 < k:                # expand window
             right += 1
@@ -46,7 +46,7 @@ def first_negative_in_every_window_optimized(nums, k):
                 
                 if nums[left] == temp[0]:       # deduction from window. if num at left is
                                                 # also present in our temp in the begining
-                                                # we deduct it by deleting it
+                                                # we deduct it by deleting it/proces on left
                     del temp[0]
 
             right += 1                          # slide window (right)
