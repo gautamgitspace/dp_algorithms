@@ -10,13 +10,14 @@ class Solution(object):
         
         #1: must_have_char_count is the bare necessity substr
             that should exist in s to fulfill the criteria
+            mwl - min window length, mws - min window start
         
         #2: it's a hit. we found one of the bare necessary char
         
         #3: all hits completed (all bare necessary chars found)
             at this point we calculate in what window length did
             we manage to do this? this would be r - l + 1 and if
-            this is LT MWL, we update MWL.
+            this is LT MWL, we update MWL. MWS too.
         
         #4: Our work is not done right now. We found 'BAC' in
             'ADYBAC' as a best effort. but now we gotta trim it
