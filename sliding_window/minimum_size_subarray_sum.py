@@ -4,7 +4,7 @@ class Solution(object):
         - variable window size, so we gotta maintain
         - condition sum >= s yields candidate answer
 	- since its >= everything after this condition
-	  is met could be the answer => while loop
+	  is met, could be the answer => while loop
         """
         left, right = 0, 0
         sums, min_len = 0, len(nums) + 1

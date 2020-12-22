@@ -21,7 +21,7 @@ def max_sum_subarray_of_size_k(self, nums):
         elif right - left + 1 > k:          # window size hit
             maximum = max(maximum, sums)    # compute maximum
             sums -= nums[left]              # deduct from sums/process on left
-            i += 1                          # move window (left)
-            j += 1                          # move window (right)
+            left += 1                          # move window (left)
+            right += 1                          # move window (right)
     
     return maximum
