@@ -4,8 +4,11 @@
 Given a string s and a non-empty string p, find
 all the start indices of p's anagrams in s.
 
-this times out for large outpute due to slowness
-of counters.
+this times out for large outputs as we create
+new counters for each interation
+
+the optim one creates counters one time and we
+keep updating the values for the required keys
 """
 
 from collections import Counter
