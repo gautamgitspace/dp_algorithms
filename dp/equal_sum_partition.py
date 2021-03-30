@@ -4,6 +4,23 @@ divide the given list into 2 subsets such that
 sum of these two subsets comes out to be k
 
 return True if such a division is possible
+
+this is very similar to subset sum problem as in
+both the problems  we gotta find subsets. HOW:
+
+technically if we have 2 partitions say p1 & p2
+with sums s1 & s2, and if we NEED s1 == s2, then
+sum of array is 2s1 or 2s2 which means array sum
+is even (anything multiplied by 2) So this task
+is only doable when array sum is EVEN 
+
+Also if we can find s1; s2 essentially needs to 
+be same as s1. So we've reduced this problem to
+subset sum problem - find a subset in given arr
+that sums up to half of k
+
+PS - this is also solvable using the leftsum and
+rightsum approach
 '''
 
 class Solution:
