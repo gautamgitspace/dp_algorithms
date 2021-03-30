@@ -1,5 +1,5 @@
-/* 0/1 Knapsack recursion algorithm to return nax profit
- * give a weight array and value array of size n and a
+/* 0/1 Knapsack recursion algorithm to return max profit
+ * given a weight array and value array of size n and a
  * maxium weight of the knapsack, W*/
 
 int knapsack(weight [], value[], n, w) {
@@ -14,12 +14,13 @@ int knapsack(weight [], value[], n, w) {
 	/* choice diagram translation : translate
 	 * your choice diagram into code here */
 
-	if (weight[n-1] <= w) {
-		/* max of either we use that item or we not */
-		return max (value[n-1] + knapsack(weight, value, n-1, w - weight[n-1]),
-				     knapsack(weight, value, n-1, w));
-	} else if (weight[n-1] > w) {
+	if (weight[n - 1] <= w) {
+		/* max of either we use item at n - 1 +
+		 * what's left over OR we do not use */
+		return max (value[n - 1] + knapsack(weight, value, n - 1, w - weight[n - 1]),
+				     knapsack(weight, value, n - 1, w));
+	} else if (weight[n - 1] > w) {
 		/* can't use that item at all */
-	    return knapsack(weight, value, n-1, w);
+	    return knapsack(weight, value, n - 1, w);
 	}
 }
